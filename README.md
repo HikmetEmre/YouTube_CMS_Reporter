@@ -246,3 +246,7 @@ src/cms_reporter/
   cli.py          command line
 web/src/          React interface (Month.tsx is the guided month)
 ```
+
+## Licence
+
+[MIT](LICENSE)
