@@ -182,8 +182,9 @@ not stored. Without the settings above, the page shows the preview only.
 
 `render.yaml` deploys the public demo to [Render](https://render.com)'s free plan:
 
-1. Push this repository to GitHub.
-2. In Render: **New > Blueprint**, choose the repository, **Apply**.
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/HikmetEmre/YouTube_CMS_Reporter)
+
+Press the button (or, in Render, **New > Blueprint** and choose the repository), then **Apply**.
 
 Render builds the Dockerfile, generates a master key and sets `CMS_DEMO_MODE=1`.
 The free plan sleeps after a period without visitors, so the first request
