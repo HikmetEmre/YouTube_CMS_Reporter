@@ -534,4 +534,6 @@ for hot reload; API calls are proxied to port 8000.
 
 ## Licence
 
-[MIT](LICENSE)
+[MIT](LICENSE) © 2025 Hikmet Emre GÜLER
+
+Contact : hikmetemreguler@gmail.com
