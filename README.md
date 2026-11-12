@@ -14,6 +14,9 @@
 ![Docker](https://img.shields.io/badge/Docker-one%20image-2496ED?logo=docker&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-19%20passing-2ea44f?logo=pytest&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-blue)
+[![Live demo](https://img.shields.io/badge/live%20demo-online-46E3B7?logo=render&logoColor=white)](https://cms-reporter-demo.onrender.com)
+
+### [▶ Try the live demo](https://cms-reporter-demo.onrender.com)
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/HikmetEmre/YouTube_CMS_Reporter)
 
@@ -70,7 +73,7 @@ It is built for the people who actually run the month (a finance colleague or a
 manager, not a developer), and everything the interface does is also available from
 the command line for automation.
 
-**Live demo:** _add your Render URL here once deployed._ Each visitor gets a private
+**Live demo: [cms-reporter-demo.onrender.com](https://cms-reporter-demo.onrender.com)** (the first load can take up to a minute while the free server wakes up). Each visitor gets a private
 workspace with six months of made-up data and can upload their own CMS exports,
 which are deleted after two hours.
 
