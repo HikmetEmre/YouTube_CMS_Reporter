@@ -1,0 +1,32 @@
+# Render blueprint for the public demo. In the Render dashboard: New > Blueprint,
+# pick this repository, Apply. The service builds from the Dockerfile.
+#
+# Demo mode gives every visitor a private, temporary workspace seeded with
+# synthetic data, and never sends e-mail or chat messages. The free plan has no
+# persistent disk, which suits the demo: everything is regenerated on start.
+services:
+  - type: web
+    name: cms-reporter-demo
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: CMS_DEMO_MODE
+        value: "1"
+      - key: CMS_MASTER_KEY
+        generateValue: true
+      # Optional: lets demo visitors send the sample alert to their own phone.
+      # Render asks for these values when the blueprint is applied; leave them
+      # empty to show the message preview only.
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_BOT_USERNAME
+        sync: false
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_WHATSAPP_FROM
+        sync: false
+      - key: TWILIO_SANDBOX_JOIN
+        sync: false

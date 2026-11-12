@@ -1,0 +1,114 @@
+# Network configuration - the single source of truth for producers, mapping rules
+# and commission rates. Everything in this file is FICTIONAL demo data.
+#
+# How a revenue row is attributed to a producer (first hit wins):
+#   1. a manual override for its Asset ID      (data/store/overrides.csv)
+#   2. an exact match on one of its Asset Labels   -> asset_labels
+#   3. a substring match on its Custom ID          -> custom_id_patterns
+#      (Custom IDs and patterns are compared lowercased with spaces removed;
+#       producers are tried top to bottom, so put specific patterns first)
+#   4. Shorts channel reports only: the row's Channel ID -> channels
+# Anything left over is reported as an unidentified asset.
+
+network:
+  name: Aurora Media Network
+  local_currency: TRY
+
+# Withholding applied to revenue earned in a country, before commission.
+withholding_tax:
+  US: 0.10
+
+verticals:
+  music:
+    label: Music
+    # pool: one lump Shorts sum per month (period.yaml), split pro rata by revenue
+    shorts_mode: pool
+    producers:
+      - name: Blue Heron Records
+        commission: 0.10
+        contact_email: royalties@blueheron.example
+        custom_id_patterns: [blueheron, bhr_]
+        asset_labels: [Blue Heron Records, Heron Classics]
+        channels: [UCDEMO000000000000000101, UCDEMO000000000000000102]
+      - name: Kestrel Sound
+        commission: 0.10
+        contact_email: accounts@kestrelsound.example
+        custom_id_patterns: [kestrel]
+        asset_labels: [Kestrel Sound, Kestrel Live Sessions]
+        channels: [UCDEMO000000000000000103]
+      - name: Lumen Music Group
+        commission: 0.05
+        contact_email: finance@lumenmusic.example
+        custom_id_patterns: [lumen, lmg_, glasswing]
+        asset_labels: [Lumen Music Group, Lumen Kids, Glasswing Audio, Northgate Folk Archive]
+        channels: [UCDEMO000000000000000104, UCDEMO000000000000000105, UCDEMO000000000000000106]
+      - name: Saffron Tapes
+        commission: 0.15
+        contact_email: hello@saffrontapes.example
+        custom_id_patterns: [saffron]
+        asset_labels: [Saffron Tapes]
+        channels: [UCDEMO000000000000000107]
+      - name: Tidewater Audio
+        commission: 0.20
+        contact_email: office@tidewateraudio.example
+        custom_id_patterns: [tidewater, tdw_]
+        asset_labels: [Tidewater Audio]
+        channels: [UCDEMO000000000000000108]
+      - name: Meridian Collective
+        commission: 0.20
+        contact_email: team@meridiancollective.example
+        custom_id_patterns: [meridian]
+        asset_labels: [Meridian Collective]
+        channels: [UCDEMO000000000000000109]
+      - name: Aurora Originals   # the network's own catalogue: keeps 100%
+        commission: 1.0
+        custom_id_patterns: [auroraoriginals, aurora_]
+        asset_labels: [Aurora Originals]
+        channels: [UCDEMO000000000000000110]
+
+  non_music:
+    label: Non-Music
+    # per_channel: a per-channel Shorts report sits with the month's CSVs
+    shorts_mode: per_channel
+    producers:
+      - name: Harbor Light Films
+        commission: 0.20
+        contact_email: rights@harborlight.example
+        custom_id_patterns: [harborlight, hlf_]
+        asset_labels: [Harbor Light Films]
+        channels: [UCDEMO000000000000000201]
+      - name: Paper Kite Animation
+        commission: 0.20
+        contact_email: studio@paperkite.example
+        custom_id_patterns: [paperkite]
+        asset_labels: [Paper Kite Animation, Paper Kite Shorts]
+        channels: [UCDEMO000000000000000202, UCDEMO000000000000000203]
+      - name: Quartz Documentary
+        commission: 0.20
+        contact_email: licensing@quartzdoc.example
+        custom_id_patterns: [quartzdoc, quartz_]
+        asset_labels: [Quartz Documentary]
+        channels: [UCDEMO000000000000000204]
+      - name: Little Acorn Kids
+        commission: 0.20
+        contact_email: hello@littleacorn.example
+        custom_id_patterns: [littleacorn]
+        asset_labels: [Little Acorn Kids]
+        channels: [UCDEMO000000000000000205]
+      - name: Lumen Music Group   # same client, different rate book in this vertical
+        commission: 0.05
+        contact_email: finance@lumenmusic.example
+        custom_id_patterns: [lumen, lmg_]
+        asset_labels: [Lumen Music Group, Lumen Kids]
+        channels: [UCDEMO000000000000000206]
+      - name: Meridian Collective
+        commission: 0.20
+        contact_email: team@meridiancollective.example
+        custom_id_patterns: [meridian]
+        asset_labels: [Meridian Collective]
+        channels: [UCDEMO000000000000000207]
+      - name: Aurora Originals
+        commission: 1.0
+        custom_id_patterns: [auroraoriginals, aurora_, easybaking, cityfootsteps]
+        asset_labels: [Aurora Originals, Easy Baking at Home, City Footsteps]
+        channels: [UCDEMO000000000000000208, UCDEMO000000000000000209]

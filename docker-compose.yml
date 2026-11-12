@@ -1,0 +1,33 @@
+# docker compose up app                      -> web interface on http://localhost:8000
+# docker compose run --rm cli demo           -> synthetic data, end to end
+# docker compose run --rm cli run 2026-10    -> any CLI command
+# docker compose --profile alerts up -d      -> also run the conflict watcher
+
+x-common: &common
+  build: .
+  image: cms-reporter:latest
+  env_file: .env
+  volumes:
+    - ./data:/app/data
+    - ./config:/app/config
+
+services:
+  app:
+    <<: *common
+    ports:
+      - "127.0.0.1:8000:8000"   # local only: the app has no login of its own
+    restart: unless-stopped
+
+  cli:
+    <<: *common
+    profiles: ["cli"]
+    healthcheck:
+      disable: true
+
+  conflict-watcher:
+    <<: *common
+    profiles: ["alerts"]
+    command: ["conflicts", "--watch", "--interval", "900"]
+    healthcheck:
+      disable: true
+    restart: unless-stopped

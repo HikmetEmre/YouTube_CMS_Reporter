@@ -1,0 +1,19 @@
+# Secrets and anything that could hold client data
+.env
+data/
+config/client_secret*.json
+config/*token*.json
+*.ipynb
+
+# Python
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# Front end
+web/node_modules/
+src/cms_reporter/static/
