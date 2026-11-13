@@ -18,8 +18,6 @@
 
 ### [▶ Try the live demo](https://cms-reporter-demo.onrender.com)
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/HikmetEmre/YouTube_CMS_Reporter)
-
 <br/>
 
 <img src="docs/screenshots/review.png" alt="Reviewing a month: totals, revenue trend, what each client is paid, and the settlement table" width="900" />
