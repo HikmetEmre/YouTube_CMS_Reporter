@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e30a17"/>
+      <stop offset="1" stop-color="#b80812"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="360" fill="url(#bg)"/>
+
+  <!-- faint grid rings, echoing the radar banner -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2">
+    <circle cx="1010" cy="180" r="200"/>
+    <circle cx="1010" cy="180" r="260"/>
+  </g>
+
+  <!-- report sheet -->
+  <g transform="translate(830,50)">
+    <rect x="0" y="0" width="230" height="260" rx="14" fill="#ffffff"/>
+    <rect x="22" y="24" width="120" height="10" rx="5" fill="#e30a17"/>
+    <rect x="22" y="44" width="80" height="8" rx="4" fill="#f3b5b8"/>
+    <!-- bars -->
+    <g fill="#e30a17">
+      <rect x="28"  y="150" width="26" height="50" rx="4" fill-opacity="0.45"/>
+      <rect x="66"  y="120" width="26" height="80" rx="4" fill-opacity="0.65"/>
+      <rect x="104" y="135" width="26" height="65" rx="4" fill-opacity="0.55"/>
+      <rect x="142" y="95"  width="26" height="105" rx="4" fill-opacity="0.8"/>
+      <rect x="180" y="75"  width="26" height="125" rx="4"/>
+    </g>
+    <line x1="22" y1="202" x2="210" y2="202" stroke="#f3b5b8" stroke-width="2"/>
+    <!-- table rows -->
+    <rect x="22" y="220" width="186" height="7" rx="3.5" fill="#f3d0d2"/>
+    <rect x="22" y="236" width="140" height="7" rx="3.5" fill="#f3d0d2"/>
+  </g>
+
+  <!-- revenue split donut -->
+  <g transform="translate(1135,250)">
+    <circle r="62" fill="#b80812" stroke="#ffffff" stroke-width="4"/>
+    <g fill="none" stroke-width="22">
+      <circle r="40" stroke="#ffffff" stroke-dasharray="125 252" transform="rotate(-90)"/>
+      <circle r="40" stroke="#ffffff" stroke-opacity="0.6" stroke-dasharray="75 252" stroke-dashoffset="-128" transform="rotate(-90)"/>
+      <circle r="40" stroke="#ffffff" stroke-opacity="0.3" stroke-dasharray="45 252" stroke-dashoffset="-206" transform="rotate(-90)"/>
+    </g>
+  </g>
+
+  <!-- text -->
+  <text x="70" y="110" font-size="20" font-weight="600" letter-spacing="4" fill="#ffffff" fill-opacity="0.85">ROYALTY SETTLEMENT · CLIENT REPORTING</text>
+  <text x="70" y="190" font-size="68" font-weight="800" fill="#ffffff">YouTube CMS</text>
+  <text x="70" y="262" font-size="68" font-weight="800" fill="#ffffff">Reporter</text>
+  <rect x="72" y="282" width="90" height="5" rx="2.5" fill="#ffffff"/>
+  <text x="70" y="322" font-size="22" fill="#ffffff" fill-opacity="0.85">End-to-end reporting for monthly revenue and channel metadata.</text>
+</svg>
