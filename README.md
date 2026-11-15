@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/logo.svg" alt="CMS Reporter" width="110" />
+<img src="docs/ycr_banner.svg" alt="CMS Reporter" width="100%" />
 
 # YouTube CMS Reporter
 
